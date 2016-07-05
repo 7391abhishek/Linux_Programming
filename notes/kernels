@@ -1,0 +1,20 @@
+
+(wikipedia) 
+Monolithic Kernel:
+The main disadvantages of monolithic kernels are the dependencies between system components — a bug in a device driver might crash the entire system — and the fact that large kernels can become very difficult to maintain.
+-> Mo. kernels support dynamica loading/unloading of modules. (Eg. Linux)
+
+Limitations of Mono :
+
+    Coding in kernel can be challenging, in part because one cannot use common libraries (like a full-featured libc), and because one needs to use a source-level debugger like gdb. Rebooting the computer is often required. This is not just a problem of convenience to the developers. When debugging is harder, and as difficulties become stronger, it becomes more likely that code will be "buggier".
+    Bugs in one part of the kernel have strong side effects; since every function in the kernel has all the privileges, a bug in one function can corrupt data structure of another, totally unrelated part of the kernel, or of any running program.
+    Kernels often become very large and difficult to maintain.
+    Even if the modules servicing these operations are separate from the whole, the code integration is tight and difficult to do correctly.
+    Since the modules run in the same address space, a bug can bring down the entire system.
+    Monolithic kernels are not portable; therefore, they must be rewritten for each new architecture that the operating system is to be used on.
+
+
+Micro Kernels: part in system space, part in user space
+
+
+Different components: Device drivers, Scheduler, Memory handling, File systems, Network stacks

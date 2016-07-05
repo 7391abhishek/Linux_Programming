@@ -1,0 +1,11 @@
+Tools to load/remove a kernel module: depmod, insmod, modprobe, rmmod
+
+/etc/modprobe.conf : contains mappings between alias names and actual kernel modules.
+/lib/modules/version/modules.dep : file to check dependencies for a particular module. (created using "depmod -a")
+
+
+***
+1. insmod is intended to be fairly dumb about the location of modules, whereas modprobe is aware of the default
+location of modules, knows how to figure out the dependencies and load the modules in the right order.
+
+2. .modinfo : additional info about the kernel module 
