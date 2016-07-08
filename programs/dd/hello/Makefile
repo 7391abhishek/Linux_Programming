@@ -1,5 +1,11 @@
 obj-m += hello.o
 obj-m += hello_2.o
+obj-m += hello_3.o
+obj-m += mod.o
+
+mod-objs := mod1.o mod2.o
+
+
 KERNELDIR  := /lib/modules/$(shell uname -r)/build
 PWD    	   := $(shell pwd)
 OUTPUT_FILES := *.o *.ko *.mod.* *.symvers *.order
