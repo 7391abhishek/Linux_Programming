@@ -9,3 +9,21 @@ Tools to load/remove a kernel module: depmod, insmod, modprobe, rmmod
 location of modules, knows how to figure out the dependencies and load the modules in the right order.
 
 2. .modinfo : additional info about the kernel module 
+
+/proc/kallsyms: Contains the functions/symbols that the kernel has exported for the users to write kernel modules.
+Symbols: are resolved while insmoding
+
+
+Major and Minor Numbers:
+	Major Number: tells which driver is used to control this device. Each driver is assigned a unique major number.
+	Minor Number: used by the driver to distinguish between various devices it controls.
+
+Types of devices: Character and Block.
+Important lines (from The Linux Kernel Module Programming Guide):
+	The difference is that block devices
+	have a buffer for requests, so they can choose the best order in which to respond to the requests. This is
+	important in the case of storage devices, where it's faster to read or write sectors which are close to each other,
+	rather than those which are further apart. Another difference is that block devices can only accept input and
+	return output in blocks (whose size can vary according to the device), whereas character devices are allowed
+	to use as many or as few bytes as they like. Most devices in the world are character, because they don't need
+	this type of buffering, and they don't operate with a fixed block size.
