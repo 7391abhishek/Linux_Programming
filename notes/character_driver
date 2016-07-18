@@ -1,0 +1,24 @@
+Charecter Driver:
+. device in linux kernel is represented as a file.
+. file in kernel space means an open file and not a file on the disk.
+. an open file is represented using a inode structure.
+
+Registering a charecter driver:
+For the kernel to recognise your device and perform operations on your behalf,
+we need to first introduce our device to the kernel, which is done using the "register_chrdev" method.
+
+Problem: Assignment of a major number for the device file.
+Solution-1: Assign a major number manually.
+	The issue with selecting this approach is that we never know if the number we selected
+	is already being used or it will be used in the future. There is NO GOOD WAY of assigning 
+	a major number to your device manually. Thus we use the second solution.
+
+Solution-2: Have the kernel assign a major number dynamically, by passing 0 as the major number as argument
+		to "register_chrdev".
+	.problem : cant make a device file in advance.
+	.sol: let the kernel print the major number, and then user can read that and make the file.
+	.sol: the new device will have entry in /proc/devices, read from there and make device.
+	.SOL: let kernel issue the mknod, and rm calls for you and, create and delete the device
+		files for the user on open and cleanup respectively.  
+
+
