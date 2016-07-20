@@ -1,0 +1,25 @@
+segments in a compiled program: text(code), data, bss, heap, stack
+.note: the execution of the instructions in the text segment is non-linear, due to the branch, jump and call instructions (in assembly program).
+
+. text segment:
+	> read only section, since it only contains instructions and no data.
+	> any attempt to write results in killing of program.
+	> since read only, can be shared among multiple programs, i.e. multiple instances of same program can run simultaneously 
+	> fixed in size, since nothing changes.
+
+. data and bss segments:
+	> used to store global and static program variables.
+	> data segment contains the initialized ones.
+	> bss contains un-initialized ones.
+	> global and static variables PERSIST, since they have their own memory segments.
+	> these segments are writable, but still have the fixed size.
+
+. heap segment:
+	> can grow and shrink.
+	> grows downwrads towards larger addresses.
+
+.stack segment:
+	> has variable size.
+	> can be written to, over-written and ....
+	> the ESP register is used to keep track of the address of the end of stack.
+	> grows upwards, towards lower memory addresses

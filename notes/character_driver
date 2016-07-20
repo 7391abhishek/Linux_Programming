@@ -21,4 +21,4 @@ Solution-2: Have the kernel assign a major number dynamically, by passing 0 as t
 	.SOL: let kernel issue the mknod, and rm calls for you and, create and delete the device
 		files for the user on open and cleanup respectively.  
 
-
+-> After the module has been registered successfully, an entry corresponding to the device name can be found inside "/proc/devices" under character devices.
