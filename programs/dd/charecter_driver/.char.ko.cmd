@@ -1,1 +1,0 @@
-cmd_/home/test/abhishek/Linux_Programming/programs/dd/charecter_driver/char.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/test/abhishek/Linux_Programming/programs/dd/charecter_driver/char.ko /home/test/abhishek/Linux_Programming/programs/dd/charecter_driver/char.o /home/test/abhishek/Linux_Programming/programs/dd/charecter_driver/char.mod.o

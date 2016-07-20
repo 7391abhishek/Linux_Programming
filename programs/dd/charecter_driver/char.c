@@ -14,9 +14,7 @@ int x;
 module_param(x, int, 0); //name,type, permission in sysfs for corresponding file
 /* there is also support for arrays and strings */
 
-unsigned int dev_major;
-module_param(dev_major, int, 0);
-
+unsigned int dev_major = 0;
 const char *dev_name = "mcd"; /* My char device */
 
 int dev_release (struct inode *inodep, struct file *filp )
@@ -48,6 +46,7 @@ int hello_init(void)
 	printk(KERN_INFO "Hello world 1., x = %d\n", x); 
 	printk(KERN_INFO "Major number = %d, name = %s\n", 
 		dev_major, dev_name);
+	
 	/*
 	 * * A non 0 return means init_module failed; module can't be loaded.
 	 * */

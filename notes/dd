@@ -18,7 +18,7 @@ Major and Minor Numbers:
 	Major Number: tells which driver is used to control this device. Each driver is assigned a unique major number.
 	Minor Number: used by the driver to distinguish between various devices it controls.
 
-Types of devices: Character and Block.
+Types of devices: Character, Block and Network.
 Important lines (from The Linux Kernel Module Programming Guide):
 	The difference is that block devices
 	have a buffer for requests, so they can choose the best order in which to respond to the requests. This is
