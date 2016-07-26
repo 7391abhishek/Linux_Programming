@@ -23,3 +23,8 @@ segments in a compiled program: text(code), data, bss, heap, stack
 	> can be written to, over-written and ....
 	> the ESP register is used to keep track of the address of the end of stack.
 	> grows upwards, towards lower memory addresses
+
+
+Exploits:
+. SadMind worm
+. CodeRed worm

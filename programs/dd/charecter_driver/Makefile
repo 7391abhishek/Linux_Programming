@@ -1,4 +1,4 @@
-obj-m += char.o # final module to be created
+obj-m += char1.o # final module to be created
 
 KERNELDIR  := /lib/modules/$(shell uname -r)/build
 PWD    	   := $(shell pwd)

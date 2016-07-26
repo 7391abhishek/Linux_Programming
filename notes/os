@@ -1,1 +1,10 @@
 Reference: William Stallings
+
+MAR: Memory Address Register
+	Specifies the address in Memory for the next read and write.
+MBR: Memory buffer register
+	Points to a memory buffer address, from/which, the data is read or written to.
+
+Similarly , IO registers: IO(AR/BR)
+IO module: data transfer between IO devices - processor/memory.
+IO module contains buffers to hold data, until can be sent.
