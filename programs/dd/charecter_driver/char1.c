@@ -71,10 +71,8 @@ static ssize_t dev_read(struct file *filp, char __user *userp,
 static ssize_t dev_write (struct file *filp, const char __user *userp, 
 		size_t sizep, loff_t *offp)
 {
-	if(userp)
-		printk(KERN_INFO "userp = %s\n", userp);
-	printk(KERN_INFO "%s: Operation not supported\n", __func__);
-	return strlen(userp);
+	printk(KERN_INFO "%s\n", __func__);
+	return 0;
 }
 
 int hello_init(void)
