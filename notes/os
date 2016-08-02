@@ -1,5 +1,7 @@
 Reference: William Stallings
 
+REGISTERS (PRESENCE AND THEIR USES)
+
 MAR: Memory Address Register
 	Specifies the address in Memory for the next read and write.
 MBR: Memory buffer register
@@ -8,3 +10,17 @@ MBR: Memory buffer register
 Similarly , IO registers: IO(AR/BR)
 IO module: data transfer between IO devices - processor/memory.
 IO module contains buffers to hold data, until can be sent.
+
+
+Program Status Word: Set of registers used by the processor.
+The PSW typically
+contains condition codes plus other status information, such as an interrupt
+enable/disable bit and a kernel/user mode bit.
+
+
+In a processor with multiple types of interrupts, a set of registers, called interrupt registers
+are present.
+
+Also dedicated registers are used by memory mgt. h/w and other many h/w.
+If the h/w is designed with OS support in mind, then some functionality like memory protection
+can be implemented in h/w.

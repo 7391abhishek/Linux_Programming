@@ -8,6 +8,8 @@
 #include <linux/init.h> /* for module_init() and module_exit() macros*/
 #include <linux/moduleparam.h> /* for modular params */
 #include <linux/fs.h>
+#include <linux/uaccess.h>
+
 /**/
 static int dev_release (struct inode *inodep, struct file *filp );
 static int dev_open(struct inode *inodep, struct file *filp);
@@ -48,6 +50,7 @@ static int dev_release (struct inode *inodep, struct file *filp )
 	open_count--;
 	printk(KERN_INFO "File open count after close = %d\n", open_count);
 	return 0;
+
 }
 
 static int dev_open(struct inode *inodep, struct file *filp)
@@ -71,7 +74,13 @@ static ssize_t dev_read(struct file *filp, char __user *userp,
 static ssize_t dev_write (struct file *filp, const char __user *userp, 
 		size_t sizep, loff_t *offp)
 {
+	char buf[20];
+	int fail = 0;
+	
 	printk(KERN_INFO "%s\n", __func__);
+	memset(buf, '\0', 20);
+	fail = copy_from_user(buf, userp, 12);
+	printk(KERN_INFO "buf = %s\n", buf);
 	return 0;
 }
 
@@ -96,7 +105,7 @@ void hello_exit(void)
 {
 	printk(KERN_INFO "Goodbye world 1.\n");
 	/* unregister the device */
-	unregister_chrdev(major, dev_name) ;
+	unregister_chrdev(major, dev_name);
 }
 
 
